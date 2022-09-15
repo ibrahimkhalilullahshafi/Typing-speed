@@ -16,6 +16,10 @@ body {
   margin: 0 auto;
 }
 
+.ques-ans {
+  color: white;
+}
+
 #question {
   height: 100px;
   display: flex;
