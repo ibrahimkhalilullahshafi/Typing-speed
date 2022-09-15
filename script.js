@@ -22,6 +22,7 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
+
   if (newLetter === 32 && e.target === document.body) {
     e.preventDefault();
   }

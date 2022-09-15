@@ -25,6 +25,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
   color: white;
   font-size: 25px;
   border-radius: 15px;
@@ -34,6 +37,7 @@ body {
       rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
+  padding: 10px;
 }
 
 #display {
