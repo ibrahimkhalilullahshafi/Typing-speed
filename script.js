@@ -22,6 +22,9 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
+  if (newLetter === 32 && e.target === document.body) {
+    e.preventDefault();
+  }
 
   // Handle backspace press
   if (newLetter == "Backspace") {
@@ -67,7 +70,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = Math.trunc((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -117,7 +120,8 @@ const start = () => {
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
-      startTime = new Date().getTime();
+
+      startTime = (new Date().getTime());
     }
     count--;
   }, 1000);
@@ -132,7 +136,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent = Math.trunc((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
