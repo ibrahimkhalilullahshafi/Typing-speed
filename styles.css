@@ -152,8 +152,12 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 20px;
+  text-align: center;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
   justify-content: space-around;
 }
 
@@ -162,6 +166,7 @@ button {
   height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
@@ -195,7 +200,14 @@ button {
     width: 100%;
   }
 
+  #histories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
   .card {
     flex-direction: column;
+    width: 100%;
   }
 }
